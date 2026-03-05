@@ -35,10 +35,10 @@ export function useMesures() {
 export function useBCG() {
   const { session } = useAuth();
   return useQuery({
-    queryKey: ['bcg', session?.eleveName],
+    queryKey: ['bcg', session?.eleveIDU],
     queryFn: () =>
       airtableFetchAll(TABLES.BCG, {
-        filterByFormula: `FIND('${session?.eleveName}', {Élève})`,
+        filterByFormula: `FIND('${session?.eleveIDU}', {IDU BCG})`,
       }),
     enabled: !!session,
     select: (records) =>
@@ -51,10 +51,10 @@ export function useBCG() {
 export function useWorkouts() {
   const { session } = useAuth();
   return useQuery({
-    queryKey: ['workouts', session?.eleveName],
+    queryKey: ['workouts', session?.eleveIDU],
     queryFn: () =>
       airtableFetchAll(TABLES.WORKOUT, {
-        filterByFormula: `FIND('${session?.eleveName}', {Élève})`,
+        filterByFormula: `FIND('${session?.eleveIDU}', {IDU Workout})`,
       }),
     enabled: !!session,
     select: (records) =>
@@ -71,10 +71,10 @@ export function useWorkouts() {
 export function usePlanAlimentaire() {
   const { session } = useAuth();
   return useQuery({
-    queryKey: ['plan', session?.eleveName],
+    queryKey: ['plan', session?.eleveIDU],
     queryFn: () =>
       airtableFetchAll(TABLES.PLAN_ALIMENTAIRE, {
-        filterByFormula: `FIND('${session?.eleveName}', {Élève})`,
+        filterByFormula: `FIND('${session?.eleveIDU}', {IDU Plan})`,
       }),
     enabled: !!session,
     select: (records) =>
