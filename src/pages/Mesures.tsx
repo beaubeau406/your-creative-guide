@@ -17,7 +17,8 @@ const Mesures = () => {
   const current = mesures && mesures.length > 0 ? mesures[0] : null;
   const previous = mesures && mesures.length > 1 ? mesures[1] : null;
   const poidsActuel = current?.Poids || poidsInitial;
-  const youformUrl = `https://app.youform.com/forms/eks9hz3h?block_id=15ee2ed2-b1d0-4744-98c9-0fcbabff24f6&nom=${encodeURIComponent(session?.eleveName||'')}&id=${encodeURIComponent(session?.eleveIDU||'')}`;
+  const prenom = session?.eleveName?.split(' ')[0] || '';
+const youformUrl = `https://app.youform.com/forms/eks9hz3h?block_id=15ee2ed2-b1d0-4744-98c9-0fcbabff24f6&nom=${encodeURIComponent(prenom)}&id=${encodeURIComponent(session?.eleveIDU||'')}`;
 
   const chartData = mesures ? [...mesures].reverse().map((m: any) => ({
     date: new Date(m['Date de Mesure']).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' }),
