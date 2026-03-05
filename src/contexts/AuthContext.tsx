@@ -44,9 +44,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setSession(sessionData);
       setSessionState(sessionData);
       return { success: true };
-    } catch {
-      return { success: false, error: 'Erreur de connexion. Vérifiez votre connexion internet.' };
-    }
+    } catch (err: any) {
+  return { success: false, error: err.message || 'Erreur inconnue' };
+}
   };
 
   const logout = () => {
