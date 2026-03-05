@@ -23,7 +23,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const login = async (code: string): Promise<{ success: boolean; error?: string }> => {
     try {
       const data = await airtableFetch(TABLES.ELEVES, {
-        filterByFormula: `{Code}='${code}'`,
+        filterByFormula: `{code}='${code}'`,
         pageSize: '1',
       });
 
@@ -41,7 +41,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const sessionData: SessionData = {
         eleveId: record.id,
         eleveName: fields.Nom || '',
-        eleveCode: fields.Code || '',
+        eleveCode: fields.code || '',
         eleveIDU: fields['IDU Eleve'] || '',
       };
 
