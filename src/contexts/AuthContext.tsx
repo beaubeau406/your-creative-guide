@@ -34,10 +34,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const record = data.records[0];
       const fields = record.fields;
 
-      if (fields.Statut !== 'Actif') {
-        return { success: false, error: 'Ce compte est inactif. Contactez votre coach.' };
-      }
-
       const sessionData: SessionData = {
         eleveId: record.id,
         eleveName: fields.Nom || '',

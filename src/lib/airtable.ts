@@ -1,4 +1,4 @@
-const AIRTABLE_TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN;
+const AIRTABLE_TOKEN = 'patHewfjnP8mzv7bX.e33712904fc11817489b47e7a4f0c895e93ca365d17c1e37c7eae626da2b323d';
 const BASE_ID = 'appNtz7nZG1UfPv4a';
 
 export const TABLES = {
