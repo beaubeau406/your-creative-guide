@@ -8,7 +8,7 @@ export function useEleveData() {
     queryKey: ['eleve', session?.eleveId],
     queryFn: async () => {
       const data = await airtableFetchAll(TABLES.ELEVES, {
-        filterByFormula: `{Code}='${session?.eleveCode}'`,
+        filterByFormula: `{code}='${session?.eleveCode}'`,
       });
       return data[0]?.fields || null;
     },
