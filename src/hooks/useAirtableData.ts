@@ -19,11 +19,10 @@ export function useEleveData() {
 export function useMesures() {
   const { session } = useAuth();
   return useQuery({
-    queryKey: ['mesures', session?.eleveName],
+    queryKey: ['mesures', session?.eleveIDU],
     queryFn: () =>
       airtableFetchAll(TABLES.MESURES, {
-        filterByFormula: `FIND('${session?.eleveName}', {Élève})`,
-        sort: JSON.stringify([{ field: 'Date de Mesure', direction: 'desc' }]),
+        filterByFormula: `FIND('${session?.eleveIDU}', {IDU Mesure})`,
       }),
     enabled: !!session,
     select: (records) =>
