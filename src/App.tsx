@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import Login from "./pages/Login";
 import DashboardLayout from "./components/DashboardLayout";
+import Dashboard from "./pages/Index";
 import Profil from "./pages/Profil";
 import Mesures from "./pages/Mesures";
 import Nutrition from "./pages/Nutrition";
@@ -26,7 +27,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 function PublicRoute({ children }: { children: React.ReactNode }) {
   const { session, loading } = useAuth();
   if (loading) return null;
-  if (session) return <Navigate to="/dashboard/profil" replace />;
+  if (session) return <Navigate to="/dashboard" replace />;
   return <>{children}</>;
 }
 
@@ -34,7 +35,7 @@ const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<PublicRoute><Login /></PublicRoute>} />
     <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
-      <Route index element={<Navigate to="/dashboard/profil" replace />} />
+      <Route index element={<Dashboard />} />
       <Route path="profil" element={<Profil />} />
       <Route path="mesures" element={<Mesures />} />
       <Route path="nutrition" element={<Nutrition />} />
