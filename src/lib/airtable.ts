@@ -4,9 +4,9 @@ const BASE_ID = 'appYA8ZZAQfU3QPXp';
 export const TABLES = {
   ELEVES: 'tbll5MlIcTSqCOLEJ',
   MESURES: 'tbltPTb2ybigc8FDJ',
-  BCG: 'BCG',
-  WORKOUT: 'Workout',
-  PLAN_ALIMENTAIRE: 'Plan Alimentaire',
+  BCG: 'tblwW8eaS9ZUEdV0c',
+  WORKOUT: 'tblaYuiCREGlpYAt6',
+  PLAN_ALIMENTAIRE: 'tblwJfBEFfx40TKlH',
   EBOOK: 'Ebook',
 };
 
