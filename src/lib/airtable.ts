@@ -1,5 +1,5 @@
 const AIRTABLE_TOKEN = 'patyBjeyygIsXFAxs.f30451bc390aca6ec7c8f737b4c8e1efffb6c7be858741b5a0e327a97a5f32af';
-const BASE_ID = 'appNtz7nZG1UfPv4a';
+const BASE_ID = 'appYA8ZZAQfU3QPXp';
 
 export const TABLES = {
   ELEVES: 'tbll5MlIcTSqCOLEJ',
