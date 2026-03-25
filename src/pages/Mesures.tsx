@@ -12,8 +12,8 @@ const Mesures = () => {
 
   if (isLoading) return <div className="space-y-4"><Skeleton className="h-14 w-full rounded-2xl" /><Skeleton className="h-64 w-full rounded-2xl" /></div>;
 
-  const poidsInitial = eleve?.['Poids Initial (kg)'] || 0;
-  const poidsCible = eleve?.['Poids Cible (kg)'] || 0;
+  const poidsInitial = eleve?.['Poids Initial'] || 0;
+  const poidsCible = eleve?.['Poids Cible'] || 0;
   const current = mesures && mesures.length > 0 ? mesures[0] : null;
   const previous = mesures && mesures.length > 1 ? mesures[1] : null;
   const poidsActuel = current?.Poids || poidsInitial;
