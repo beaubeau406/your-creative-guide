@@ -11,8 +11,8 @@ const Profil = () => {
   }
   if (!eleve) return <p className="text-muted-foreground text-center py-12">Impossible de charger le profil.</p>;
 
-  const poidsInitial = eleve['Poids Initial (kg)'] || 0;
-  const poidsCible = eleve['Poids Cible (kg)'] || 0;
+  const poidsInitial = eleve['Poids Initial'] || 0;
+  const poidsCible = eleve['Poids Cible'] || 0;
   const poidsActuel = mesures && mesures.length > 0 ? mesures[0].Poids : poidsInitial;
   const progression = poidsInitial !== poidsCible
     ? Math.min(100, Math.max(0, ((poidsInitial - poidsActuel) / (poidsInitial - poidsCible)) * 100)) : 0;
@@ -75,7 +75,7 @@ const Profil = () => {
             { icon: Calendar, label: 'Âge', value: age ? `${age} ans` : '-', color: '#3B82F6' },
             { icon: Activity, label: 'Taille', value: eleve['Taille (cm)'] ? `${eleve['Taille (cm)']} cm` : '-', color: '#10B981' },
             { icon: Activity, label: 'Activité', value: eleve["Niveau d'activité"], color: '#F59E0B' },
-            { icon: Target, label: 'Repas/jour', value: eleve['Nombre de repas/jour'], color: '#8B5CF6' },
+            { icon: Target, label: 'Repas/jour', value: eleve['Fréquence de Repas'], color: '#8B5CF6' },
             { icon: Target, label: 'Statut', value: eleve.Statut, color: '#06B6D4' },
           ].map((item, i) => (
             <div key={i} className="rounded-xl p-3 border border-border bg-muted/30">
@@ -89,7 +89,7 @@ const Profil = () => {
         </div>
       </div>
 
-      {(eleve.Motivations || eleve['Antécédents sportifs'] || eleve['Aliments à éviter']) && (
+      {(eleve.Motivations || eleve['Antécédents Médicaux & Sportifs'] || eleve['Habitudes Alimentaires Spécifiques']) && (
         <div className="card-base p-6 space-y-4">
           <h2 className="text-xl font-heading text-foreground">Motivations & Notes</h2>
           {eleve['Antécédents sportifs'] && (
