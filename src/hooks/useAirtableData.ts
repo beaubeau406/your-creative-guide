@@ -38,7 +38,7 @@ export function useBCG() {
     queryKey: ['bcg', session?.eleveIDU],
     queryFn: () =>
       airtableFetchAll(TABLES.BCG, {
-        filterByFormula: `FIND('${session?.eleveIDU}', {IDU BCG})`,
+        filterByFormula: `FIND('${session?.eleveIDU}', {IDU BCJ})`,
       }),
     enabled: !!session,
     select: (records) =>
