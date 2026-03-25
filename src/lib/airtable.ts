@@ -1,4 +1,4 @@
-const AIRTABLE_TOKEN = 'patkuare1WFvaTeIf.28d8c16384fb136fffd29a16d1b74152eabb18ad53a80192bdcc2a6d40b1b621';
+const AIRTABLE_TOKEN = 'patyBjeyygIsXFAxs.f30451bc390aca6ec7c8f737b4c8e1efffb6c7be858741b5a0e327a97a5f32af';
 const BASE_ID = 'appNtz7nZG1UfPv4a';
 
 export const TABLES = {
