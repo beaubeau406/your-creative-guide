@@ -70,9 +70,9 @@ const Entrainement = () => {
                           <Weight className="w-3 h-3" /> {ex['Format de travail']}
                         </span>
                       )}
-                      {ex.Repos && (
+                      {ex.Rest && (
                         <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {ex.Repos}
+                          <Clock className="w-3 h-3" /> {ex.Rest}
                         </span>
                       )}
                       {ex['Charge (kg)'] && <span>{ex['Charge (kg)']} kg</span>}
